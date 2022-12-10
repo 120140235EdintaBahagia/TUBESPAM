@@ -11,42 +11,33 @@ import {
   ScrollView,
 } from 'react-native';
 
-import Loader from './Components/Loader';
+import Loader from './Loader';
 
 const RegisterScreen = (props) => {
-  const [userName, setUserName] = useState('');
+  const [userF_Name, setUserF_Name] = useState('');
+  const [userL_Name, setUserL_Name] = useState('');
   const [userEmail, setUserEmail] = useState('');
-  const [userAge, setUserAge] = useState('');
-  const [userAddress, setUserAddress] = useState('');
   const [userPassword, setUserPassword] = useState('');
   const [loading, setLoading] = useState(false);
   const [errortext, setErrortext] = useState('');
-  const [
-    isRegistraionSuccess,
-    setIsRegistraionSuccess
-  ] = useState(false);
+  const [isRegistraionSuccess,setIsRegistraionSuccess] = useState(false);
 
+  const l_nameInputRef = createRef();
   const emailInputRef = createRef();
-  const ageInputRef = createRef();
-  const addressInputRef = createRef();
   const passwordInputRef = createRef();
 
   const handleSubmitButton = () => {
     setErrortext('');
-    if (!userName) {
-      alert('Please fill Name');
+    if (!userF_Name) {
+      alert('Please fill First Name');
+      return;
+    }
+    if (!userL_Name) {
+      alert('Please fill Last Name');
       return;
     }
     if (!userEmail) {
       alert('Please fill Email');
-      return;
-    }
-    if (!userAge) {
-      alert('Please fill Age');
-      return;
-    }
-    if (!userAddress) {
-      alert('Please fill Address');
       return;
     }
     if (!userPassword) {
@@ -56,10 +47,9 @@ const RegisterScreen = (props) => {
     //Show Loader
     setLoading(true);
     var dataToSend = {
-      name: userName,
+      f_name: userF_Name,
+      l_name: userL_Name,
       email: userEmail,
-      age: userAge,
-      address: userAddress,
       password: userPassword,
     };
     var formBody = [];
@@ -152,11 +142,27 @@ const RegisterScreen = (props) => {
           <View style={styles.SectionStyle}>
             <TextInput
               style={styles.inputStyle}
-              onChangeText={(UserName) => setUserName(UserName)}
+              onChangeText={(UserF_Name) => setUserF_Name(UserF_Name)}
               underlineColorAndroid="#f000"
-              placeholder="Enter Name"
+              placeholder="Enter First Name"
               placeholderTextColor="#8b9cb5"
               autoCapitalize="sentences"
+              returnKeyType="next"
+              onSubmitEditing={() =>
+                l_nameInputRef.current && l_nameInputRef.current.focus()
+              }
+              blurOnSubmit={false}
+            />
+          </View>
+          <View style={styles.SectionStyle}>
+            <TextInput
+              style={styles.inputStyle}
+              onChangeText={(UserL_Name) => setUserL_Name(UserL_Name)}
+              underlineColorAndroid="#f000"
+              placeholder="Enter Last Name"
+              placeholderTextColor="#8b9cb5"
+              autoCapitalize="sentences"
+              ref={l_nameInputRef}
               returnKeyType="next"
               onSubmitEditing={() =>
                 emailInputRef.current && emailInputRef.current.focus()
@@ -193,42 +199,6 @@ const RegisterScreen = (props) => {
               ref={passwordInputRef}
               returnKeyType="next"
               secureTextEntry={true}
-              onSubmitEditing={() =>
-                ageInputRef.current &&
-                ageInputRef.current.focus()
-              }
-              blurOnSubmit={false}
-            />
-          </View>
-          <View style={styles.SectionStyle}>
-            <TextInput
-              style={styles.inputStyle}
-              onChangeText={(UserAge) => setUserAge(UserAge)}
-              underlineColorAndroid="#f000"
-              placeholder="Enter Age"
-              placeholderTextColor="#8b9cb5"
-              keyboardType="numeric"
-              ref={ageInputRef}
-              returnKeyType="next"
-              onSubmitEditing={() =>
-                addressInputRef.current &&
-                addressInputRef.current.focus()
-              }
-              blurOnSubmit={false}
-            />
-          </View>
-          <View style={styles.SectionStyle}>
-            <TextInput
-              style={styles.inputStyle}
-              onChangeText={(UserAddress) =>
-                setUserAddress(UserAddress)
-              }
-              underlineColorAndroid="#f000"
-              placeholder="Enter Address"
-              placeholderTextColor="#8b9cb5"
-              autoCapitalize="sentences"
-              ref={addressInputRef}
-              returnKeyType="next"
               onSubmitEditing={Keyboard.dismiss}
               blurOnSubmit={false}
             />
@@ -249,7 +219,6 @@ const RegisterScreen = (props) => {
     </View>
   );
 };
-export default RegisterScreen;
 
 const styles = StyleSheet.create({
   SectionStyle: {
@@ -299,3 +268,4 @@ const styles = StyleSheet.create({
     padding: 30,
   },
 });
+export default RegisterScreen;
