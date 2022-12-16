@@ -1,301 +1,199 @@
-import React, {useState, createRef} from 'react';
-import {
-  StyleSheet,
-  TextInput,
-  View,
-  Text,
-  Image,
-  KeyboardAvoidingView,
-  Keyboard,
-  TouchableOpacity,
-  ScrollView,
-} from 'react-native';
+import { AntDesign } from '@expo/vector-icons';
+import { StyleSheet, Text,TouchableOpacity, View, TextInput, Modal, Animated } from 'react-native';
+import React, {useState} from 'react';
 
-import Loader from './LoginScreen';
-
-const RegisterScreen = (props) => {
-  const [userName, setUserName] = useState('');
-  const [userEmail, setUserEmail] = useState('');
-  const [userAge, setUserAge] = useState('');
-  const [userAddress, setUserAddress] = useState('');
-  const [userPassword, setUserPassword] = useState('');
-  const [loading, setLoading] = useState(false);
-  const [errortext, setErrortext] = useState('');
-  const [
-    isRegistraionSuccess,
-    setIsRegistraionSuccess
-  ] = useState(false);
-
-  const emailInputRef = createRef();
-  const ageInputRef = createRef();
-  const addressInputRef = createRef();
-  const passwordInputRef = createRef();
-
-  const handleSubmitButton = () => {
-    setErrortext('');
-    if (!userName) {
-      alert('Please fill Name');
-      return;
+const ModalPoup = ({visible, children}) => {
+  const [showModal, setShowModal] = React.useState(visible);
+  const scaleValue = React.useRef(new Animated.Value(0)).current;
+  React.useEffect(() => {
+    toggleModal();
+  }, [visible]);
+  const toggleModal = () => {
+    if (visible) {
+      setShowModal(true);
+      Animated.spring(scaleValue, {
+        toValue: 1,
+        duration: 300,
+        useNativeDriver: true,
+      }).start();
+    } else {
+      setTimeout(() => setShowModal(false), 200);
+      Animated.timing(scaleValue, {
+        toValue: 0,
+        duration: 300,
+        useNativeDriver: true,
+      }).start();
     }
-    if (!userEmail) {
-      alert('Please fill Email');
-      return;
-    }
-    if (!userAge) {
-      alert('Please fill Age');
-      return;
-    }
-    if (!userAddress) {
-      alert('Please fill Address');
-      return;
-    }
-    if (!userPassword) {
-      alert('Please fill Password');
-      return;
-    }
-    //Show Loader
-    setLoading(true);
-    var dataToSend = {
-      name: userName,
-      email: userEmail,
-      age: userAge,
-      address: userAddress,
-      password: userPassword,
-    };
-    var formBody = [];
-    for (var key in dataToSend) {
-      var encodedKey = encodeURIComponent(key);
-      var encodedValue = encodeURIComponent(dataToSend[key]);
-      formBody.push(encodedKey + '=' + encodedValue);
-    }
-    formBody = formBody.join('&');
-
-    fetch('http://localhost:3000/api/user/register', {
-      method: 'POST',
-      body: formBody,
-      headers: {
-        //Header Defination
-        'Content-Type':
-        'application/x-www-form-urlencoded;charset=UTF-8',
-      },
-    })
-      .then((response) => response.json())
-      .then((responseJson) => {
-        //Hide Loader
-        setLoading(false);
-        console.log(responseJson);
-        // If server response message same as Data Matched
-        if (responseJson.status === 'success') {
-          setIsRegistraionSuccess(true);
-          console.log(
-            'Registration Successful. Please Login to proceed'
-          );
-        } else {
-          setErrortext(responseJson.msg);
-        }
-      })
-      .catch((error) => {
-        //Hide Loader
-        setLoading(false);
-        console.error(error);
-      });
   };
-  if (isRegistraionSuccess) {
-    return (
-      <View
-        style={{
-          flex: 1,
-          backgroundColor: '#307ecc',
-          justifyContent: 'center',
-        }}>
-        <Image
-          source={require('./bg login.jpeg')}
-          style={{
-            height: 150,
-            resizeMode: 'contain',
-            alignSelf: 'center'
-          }}
-        />
-        <Text style={styles.successTextStyle}>
-          Registration Successful
-        </Text>
-        <TouchableOpacity
-          style={styles.buttonStyle}
-          activeOpacity={0.5}
-          onPress={() => props.navigation.navigate('LoginScreen')}>
-          <Text style={styles.buttonTextStyle}>Login Now</Text>
-        </TouchableOpacity>
-      </View>
-    );
-  }
   return (
-    <View style={{flex: 1, backgroundColor: '#307ecc'}}>
-      <Loader loading={loading} />
-      <ScrollView
-        keyboardShouldPersistTaps="handled"
-        contentContainerStyle={{
-          justifyContent: 'center',
-          alignContent: 'center',
-        }}>
-        <View style={{alignItems: 'center'}}>
-          <Image
-            source={require('../Image/aboutreact.png')}
-            style={{
-              width: '50%',
-              height: 100,
-              resizeMode: 'contain',
-              margin: 30,
-            }}
-          />
-        </View>
-        <KeyboardAvoidingView enabled>
-          <View style={styles.SectionStyle}>
-            <TextInput
-              style={styles.inputStyle}
-              onChangeText={(UserName) => setUserName(UserName)}
-              underlineColorAndroid="#f000"
-              placeholder="Enter Name"
-              placeholderTextColor="#8b9cb5"
-              autoCapitalize="sentences"
-              returnKeyType="next"
-              onSubmitEditing={() =>
-                emailInputRef.current && emailInputRef.current.focus()
-              }
-              blurOnSubmit={false}
-            />
-          </View>
-          <View style={styles.SectionStyle}>
-            <TextInput
-              style={styles.inputStyle}
-              onChangeText={(UserEmail) => setUserEmail(UserEmail)}
-              underlineColorAndroid="#f000"
-              placeholder="Enter Email"
-              placeholderTextColor="#8b9cb5"
-              keyboardType="email-address"
-              ref={emailInputRef}
-              returnKeyType="next"
-              onSubmitEditing={() =>
-                passwordInputRef.current &&
-                passwordInputRef.current.focus()
-              }
-              blurOnSubmit={false}
-            />
-          </View>
-          <View style={styles.SectionStyle}>
-            <TextInput
-              style={styles.inputStyle}
-              onChangeText={(UserPassword) =>
-                setUserPassword(UserPassword)
-              }
-              underlineColorAndroid="#f000"
-              placeholder="Enter Password"
-              placeholderTextColor="#8b9cb5"
-              ref={passwordInputRef}
-              returnKeyType="next"
-              secureTextEntry={true}
-              onSubmitEditing={() =>
-                ageInputRef.current &&
-                ageInputRef.current.focus()
-              }
-              blurOnSubmit={false}
-            />
-          </View>
-          <View style={styles.SectionStyle}>
-            <TextInput
-              style={styles.inputStyle}
-              onChangeText={(UserAge) => setUserAge(UserAge)}
-              underlineColorAndroid="#f000"
-              placeholder="Enter Age"
-              placeholderTextColor="#8b9cb5"
-              keyboardType="numeric"
-              ref={ageInputRef}
-              returnKeyType="next"
-              onSubmitEditing={() =>
-                addressInputRef.current &&
-                addressInputRef.current.focus()
-              }
-              blurOnSubmit={false}
-            />
-          </View>
-          <View style={styles.SectionStyle}>
-            <TextInput
-              style={styles.inputStyle}
-              onChangeText={(UserAddress) =>
-                setUserAddress(UserAddress)
-              }
-              underlineColorAndroid="#f000"
-              placeholder="Enter Address"
-              placeholderTextColor="#8b9cb5"
-              autoCapitalize="sentences"
-              ref={addressInputRef}
-              returnKeyType="next"
-              onSubmitEditing={Keyboard.dismiss}
-              blurOnSubmit={false}
-            />
-          </View>
-          {errortext != '' ? (
-            <Text style={styles.errorTextStyle}>
-              {errortext}
-            </Text>
-          ) : null}
-          <TouchableOpacity
-            style={styles.buttonStyle}
-            activeOpacity={0.5}
-            onPress={handleSubmitButton}>
-            <Text style={styles.buttonTextStyle}>REGISTER</Text>
-          </TouchableOpacity>
-        </KeyboardAvoidingView>
-      </ScrollView>
-    </View>
+    <Modal transparent visible={showModal}>
+      <View style={styles.modalBackGround}>
+        <Animated.View
+          style={[styles.modalContainer, {transform: [{scale: scaleValue}]}]}>
+          {children}
+        </Animated.View>
+      </View>
+    </Modal>
   );
 };
-export default RegisterScreen;
+
+export default function App({navigation}) {
+  const [visible, setVisible] = React.useState(false);
+  return (
+      <View style={styles.backgroudcolour}>
+          <TouchableOpacity onPress={() => navigation.navigate("LoginScreen")}>
+            <View style={styles.button}>
+              <AntDesign name="back" size={24} color="black" style={styles.button} />
+            </View>
+        </TouchableOpacity>
+        <View style={styles.sign}>
+          <Text style={styles.sign0}>SIGN UP</Text>
+          <Text style={styles.sign2}>First Name :</Text>
+          <TextInput style={styles.sign3}></TextInput>
+          <Text style={styles.sign4}>Last Name :</Text>
+          <TextInput style={styles.sign5}></TextInput>
+          <Text style={styles.sign6}>Email Address :</Text>
+          <TextInput style={styles.sign7}></TextInput>
+          <Text style={styles.sign8}>Passsword :</Text>
+          <TextInput style={styles.sign9}></TextInput>
+        </View>
+        <ModalPoup visible={visible}>
+        <View style={{alignItems: 'center'}}>
+         <Text style={{justifyContent : "center", fontSize : 20, fontWeight : "bold"}}>Berhasil</Text>
+        </View>
+        <Text style={{marginVertical: 30, fontSize: 20, textAlign: 'center'}}>
+          Pendaftaran berhasil dilakukan, silahkan klik ok untuk masuk kedalam menu login
+        </Text>
+        <View style={{alignItems: 'center'}}>
+          <View style={styles.header}>
+            <TouchableOpacity onPress={() => navigation.navigate("login")}>
+            <Text style ={{color : "#2596BE"}}>OK</Text>
+            </TouchableOpacity>
+          </View>
+        </View>  
+      </ModalPoup>
+        <TouchableOpacity onPress={() => setVisible(true)}>
+          <View style={styles.register1}>
+            <Text style = {styles.register2}>Register</Text>
+          </View>
+        </TouchableOpacity>
+      </View>
+    
+  );
+}
 
 const styles = StyleSheet.create({
-  SectionStyle: {
-    flexDirection: 'row',
-    height: 40,
-    marginTop: 20,
-    marginLeft: 35,
-    marginRight: 35,
-    margin: 10,
-  },
-  buttonStyle: {
-    backgroundColor: '#7DE24E',
-    borderWidth: 0,
-    color: '#FFFFFF',
-    borderColor: '#7DE24E',
-    height: 40,
-    alignItems: 'center',
-    borderRadius: 30,
-    marginLeft: 35,
-    marginRight: 35,
-    marginTop: 20,
-    marginBottom: 20,
-  },
-  buttonTextStyle: {
-    color: '#FFFFFF',
-    paddingVertical: 10,
-    fontSize: 16,
-  },
-  inputStyle: {
+  container: {
     flex: 1,
-    color: 'white',
-    paddingLeft: 15,
-    paddingRight: 15,
-    borderWidth: 1,
-    borderRadius: 30,
-    borderColor: '#dadae8',
   },
-  errorTextStyle: {
-    color: 'red',
-    textAlign: 'center',
-    fontSize: 14,
+  backgroudcolour: {
+    flex: 1,
+    backgroundColor : '#B1E4D4',
   },
-  successTextStyle: {
-    color: 'white',
-    textAlign: 'center',
-    fontSize: 18,
-    padding: 30,
+  picture: {
+    resizeMode: "contain",
+    width: 400,
+    height: 400,
+    top: 50,
   },
+  button: {
+    top: 30,
+    left : 15,
+  },
+  sign: {
+    backgroundColor: "#B1E4D4",
+    padding: 60,
+    width: "90%",
+    left: 20,
+    top: 200,
+  },
+  sign0:{
+    top:-150,
+    left:50,
+    fontSize:30,
+    fontWeight:'bold'
+  },
+  sign2: {
+    left: -45,
+    top: -50
+  },
+  sign3: {
+    backgroundColor :"#FFF",
+    left: -45,
+    top: -40,
+    borderRadius: 100,
+    width: 320,
+    borderWidth : 2
+  },
+  sign4: {
+    left: -45,
+    top: -30
+  },
+  sign5: {
+    backgroundColor :"#FFF",
+    left: -45,
+    top: -20,
+    borderRadius: 100,
+    width: 320,
+    borderWidth : 2
+  },
+  sign6: {
+    left: -45,
+    top: -10
+  },
+  sign7: {
+    backgroundColor :"#FFF",
+    left: -45,
+    top: 0,
+    borderRadius: 100,
+    width: 320,
+    borderWidth : 2
+  },
+  sign8: {
+    left: -45,
+    top: 10
+  },
+  sign9:{
+    backgroundColor: "#FFF",
+    left: -45,
+    top: 20,
+    borderRadius: 100,
+    width: 320,
+    borderWidth : 2
+  },
+  register1: {
+    borderRadius: 10,
+    backgroundColor: "#CDD8E3",
+    width: "30%",
+    padding: 5,
+    left: 200,
+    top: 250,
+    borderWidth : 1
+  },
+  register2: {
+    fontWeight: "bold",
+    left: 25,
+    letterSpacing : 0.5
+  },
+  modalBackGround: {
+    flex: 1,
+    backgroundColor: 'rgba(0,0,0,0.5)',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  modalContainer: {
+    width: '80%',
+    backgroundColor: 'white',
+    paddingHorizontal: 20,
+    paddingVertical: 30,
+    borderRadius: 20,
+    elevation: 20,
+  },
+  header: {
+    width: '100%',
+    height: 40,
+    alignItems: 'flex-end',
+    justifyContent: 'flex-end',
+  },
+
 });
