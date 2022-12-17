@@ -16,7 +16,7 @@
 
 # Instalasi Aplikasi
  1. Instal melalui File Drive
- Download file aplikasi pada link drive berikut [`Install Resepku`]() lalu instal aplikasi pada android sesuai perintah notifikasi yang ditampilkan.
+ Download file aplikasi pada link drive berikut [`Install APK`]() lalu instal aplikasi pada android sesuai perintah notifikasi yang ditampilkan.
 
  2. Cara kedua dengan clone repository `TUBESPAM` atau download file zip. Lalu pada cmd jalankan perintah berikut:
 
