@@ -21,7 +21,7 @@ export default function LoginScreen () {
     <View style={styles.container}>
         <Image
           style={styles.tinyLogo}
-          source={require('./src/Images/profillogin.png')}
+          source={require('../Images/profillogin.png')}
           ></Image>
       <View style = {{alignItems: "center", width:100}}>
       </View>
