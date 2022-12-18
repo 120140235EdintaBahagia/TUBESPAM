@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
       justifyContent: "center",
     },
     tinyLogo: {
-        top: -50,
+        top: 60,
         width: 231,
         height:178,
         marginBottom:-280
@@ -45,6 +45,7 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         marginBottom:500,
         fontFamily: '',
+        top:50
     },
     text2:{
         textAlign: "center",
@@ -53,19 +54,20 @@ const styles = StyleSheet.create({
         top: 15,
     },
     button1 :{
-        bottom: 541,
+        bottom: 480,
         right : 159,
     },
     button2 :{
-        bottom: 574,
+        bottom: 515,
         left : 159,
     },
     boxHijau:{
-        backgroundColor: "#3ABD8F",
+        backgroundColor: "#187A6E",
         width: '90%',
         height: 120,
         borderRadius: 15,
         position: "absolute",
+        top:360
     }
   });
 
