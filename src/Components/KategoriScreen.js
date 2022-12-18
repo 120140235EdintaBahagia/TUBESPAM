@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
     fontSize:15
   },
   boxHijau:{
-    backgroundColor: "#3ABD8F",
+    backgroundColor: "#187A6E",
     width: '90%',
     height: 170,
     borderRadius: 15,
@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
     top:40
 },
 boxHijau2:{
-  backgroundColor: "#3ABD8F",
+  backgroundColor: "#187A6E",
   width: '90%',
   height: 170,
   borderRadius: 15,
@@ -86,7 +86,7 @@ boxHijau2:{
   top:65,
 },
 boxHijau3:{
-  backgroundColor: "#3ABD8F",
+  backgroundColor: "#187A6E",
   width: '90%',
   height: 170,
   borderRadius: 15,
