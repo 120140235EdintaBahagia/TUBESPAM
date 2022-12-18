@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
         right : 160,
     },
     box1:{
-        backgroundColor: "#3ABD8F",
+        backgroundColor: "#187A6E",
         width: 168,
         height: 150,
         borderRadius: 15,
@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
         top: 180 
     },
     box2:{
-        backgroundColor: "#3ABD8F",
+        backgroundColor: "#187A6E",
         width: 168,
         height: 150,
         borderRadius: 15,
@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
         top: 180 
     },
     box3:{
-        backgroundColor: "#3ABD8F",
+        backgroundColor: "#187A6E",
         width: 168,
         height: 150,
         borderRadius: 15,
@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
         top:380
     },
     box4:{
-        backgroundColor: "#3ABD8F",
+        backgroundColor: "#187A6E",
         width: 168,
         height: 150,
         borderRadius: 15,
