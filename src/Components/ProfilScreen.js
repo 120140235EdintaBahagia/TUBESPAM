@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
         left : 159,
     },
     boxHijau:{
-        backgroundColor: "#3ABD8F",
+        backgroundColor: "#187A6E",
         width: '90%',
         height: 120,
         borderRadius: 15,
