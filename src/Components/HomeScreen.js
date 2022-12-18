@@ -2,17 +2,21 @@ import { StatusBar } from 'expo-status-bar';
 import React from "react";
 import { StyleSheet, Text, Image, View, TouchableOpacity } from 'react-native';
 
+import LoginScreen from './LoginScreen';
+import RegisterScreen from './RegisterScreen';
 
-export default function home({ navigation }) {
+
+
+export default function HomeScreen({ navigation }) {
   return (
     <View style={styles.container}>
-      <Image style={styles.picture} source={require('../assets/logo.png')} />
-      <TouchableOpacity onPress={() => navigation.navigate("login")}>
+      <Image style={styles.picture} source={require('../Images/Logo.png')} />
+      <TouchableOpacity onPress={() => navigation.navigate("LoginScreen")}>
         <View style={styles.button}>
           <Text style={styles.buttonstyles}> Login</Text>
         </View>
       </TouchableOpacity>
-      <TouchableOpacity onPress={() => navigation.navigate("register")}>
+      <TouchableOpacity onPress={() => navigation.navigate("RegisterScreen")}>
         <View style={styles.button}>
           <Text style={styles.buttonstyles}> Register</Text>
         </View>
