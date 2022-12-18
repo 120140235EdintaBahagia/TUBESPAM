@@ -38,4 +38,4 @@ berbasis react native menggunakan bahasa pemrograman javascript serta menggunaka
 
 # Link Figma
 
-Klik [Link Figma](https://www.figma.com/file/2PgoCXxmt54b4w8K2Nwx2q/DESIGN-PAM?node-id=0%3A1&t=NZ6vaGQsNQhyKUN4-1) ini utuk melihat desain dari aplikasi MENUWQQ.
+Klik [`Link Figma`](https://www.figma.com/file/2PgoCXxmt54b4w8K2Nwx2q/DESIGN-PAM?node-id=0%3A1&t=NZ6vaGQsNQhyKUN4-1) ini untuk melihat desain dari aplikasi MENUWQQ.
