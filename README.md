@@ -1,5 +1,5 @@
 # Tugas Proyek Akhir Pemrograman Aplikasi Mobile
-### Nama Aplikasi: 
+### Nama Aplikasi: RESEP MAKANAN
 ### Anggota Kelompok:
   `• Dwi Ananda Rizky (120140027)`
   
