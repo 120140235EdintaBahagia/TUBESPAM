@@ -2,11 +2,6 @@ import { StatusBar } from 'expo-status-bar';
 import React from "react";
 import { StyleSheet, Text, Image, View, TouchableOpacity } from 'react-native';
 
-import LoginScreen from './LoginScreen';
-import RegisterScreen from './RegisterScreen';
-
-
-
 export default function HomeScreen({ navigation }) {
   return (
     <View style={styles.container}>
