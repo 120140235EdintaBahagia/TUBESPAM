@@ -1,3 +1,4 @@
+import { NavigationContainer } from "@react-navigation/native";
 import { StatusBar } from "expo-status-bar";
 
 import React, { useState } from "react";
@@ -10,14 +11,13 @@ import {
   Button,
   TouchableOpacity,
 } from "react-native";
- 
-export default function LoginScreen () {
+
+
+export default function LoginScreen ({navigation}) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
  
   return (
-
-
     <View style={styles.container}>
         <Image
           style={styles.tinyLogo}
@@ -29,7 +29,7 @@ export default function LoginScreen () {
 
 
       <StatusBar style="auto" />
-      <><View style={styles.inputView}>
+      <View style={styles.inputView}>
           <TextInput
             style={styles.TextInput}
             placeholder="Email"
@@ -38,20 +38,23 @@ export default function LoginScreen () {
         </View><View style={styles.inputView}>
             <TextInput
               style={styles.TextInput}
-              placeholder="Password."
+              placeholder="Password"
               placeholderTextColor="#c2c2c2"
               secureTextEntry={true}
               onChangeText={(password) => setPassword(password)} />
-          </View><TouchableOpacity>
+          </View>
+          <TouchableOpacity>
             <Text style={styles.forgot_button}>Forgot Password?</Text>
-          </TouchableOpacity><TouchableOpacity style={styles.loginBtn}>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.loginBtn} onPress={() => navigation.navigate("Bottom")}>
             <Text style={styles.loginText}>Login</Text>
-          </TouchableOpacity></>
+          </TouchableOpacity>
           <View>
-            <TouchableOpacity style={styles.loginBtn1}>
+            <TouchableOpacity style={styles.loginBtn1} onPress={() => navigation.navigate("RegisterScreen")}>
             <Text style={styles.loginText}>Sign Up</Text>
             </TouchableOpacity>
           </View>
+          
           
     </View>
   );
