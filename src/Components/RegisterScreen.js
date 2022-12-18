@@ -66,7 +66,7 @@ export default function App({navigation}) {
         </Text>
         <View style={{alignItems: 'center'}}>
           <View style={styles.header}>
-            <TouchableOpacity onPress={() => navigation.navigate("login")}>
+            <TouchableOpacity onPress={() => navigation.navigate("LoginScreen")}>
             <Text style ={{color : "#2596BE"}}>OK</Text>
             </TouchableOpacity>
           </View>
