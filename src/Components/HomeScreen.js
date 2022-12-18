@@ -25,20 +25,20 @@ const HomeScreen = () => {
       </View>
       <View style={styles.boxHijau}>
         <Text style={styles.text1}>Rekomendasi</Text>
-        <Image source={require('../Images/nasgor.jpeg')} style={{height:80, width:80, margin:20 }} />
+        <Image source={require('../Images/nasgor.png')} style={{height:80, width:80, margin:20 }} />
         <Text style={{height:80, width:100, margin:20, top:-35 }} >Nasi Goreng</Text>
-        <Image source={require('../Images/Migor.jpeg')} style={{height:80, width:80, margin:20, top:-240, left:120 }} />
+        <Image source={require('../Images/Migor.png')} style={{height:80, width:80, margin:20, top:-240, left:120 }} />
         <Text style={{height:80, width:100, margin:20, top:-35, left:123, top:-275 }} >Mie Goreng</Text>
-        <Image source={require('../Images/Abar.jpeg')} style={{height:80, width:80, margin:20, top:-480, left:225 }} />
+        <Image source={require('../Images/Abar.png')} style={{height:80, width:80, margin:20, top:-480, left:225 }} />
         <Text style={{height:80, width:100, margin:20, top:-35, left:225, top:-515 }} >Ayam Bakar</Text>
       </View>
       <View style={styles.boxHijau2}>
       <Text style={styles.text1}>Trending</Text>
-      <Image source={require('../Images/UdangAsamMns.jpeg')} style={{height:80, width:80, margin:20 }} />
+      <Image source={require('../Images/Udang.png')} style={{height:80, width:80, margin:20 }} />
         <Text style={{height:80, width:100, margin:20, top:-35 }} >Udang Asam Manis</Text>
-        <Image source={require('../Images/Rendang.jpeg')} style={{height:80, width:80, margin:20, top:-240, left:120 }} />
+        <Image source={require('../Images/Rendang.png')} style={{height:80, width:80, margin:20, top:-240, left:120 }} />
         <Text style={{height:80, width:100, margin:20, top:-35, left:123, top:-275 }} >Rendang</Text>
-        <Image source={require('../Images/TelurDdrCr.jpeg')} style={{height:80, width:80, margin:20, top:-480, left:225 }} />
+        <Image source={require('../Images/Telur.png')} style={{height:80, width:80, margin:20, top:-480, left:225 }} />
         <Text style={{height:80, width:100, margin:20, top:-35, left:225, top:-515 }} >Telur Dadar Crispy</Text>
       </View>
     </View>    
