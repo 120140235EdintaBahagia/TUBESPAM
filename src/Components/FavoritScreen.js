@@ -47,10 +47,9 @@ const styles = StyleSheet.create({
     },
     text:{
         fontSize: 25,
-        bottom: 310,
+        bottom: 340,
         textAlign: 'center',
         fontWeight: 'bold',
-        top:-270
     },
     button1 :{
         bottom: 352,
