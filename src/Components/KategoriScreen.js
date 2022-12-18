@@ -51,18 +51,8 @@ const styles = StyleSheet.create({
     fontSize: 25,
     fontWeight: 'bold',
     left: 90,
-  },
-  boxSearch: {
-    width: "auto",
-    height: 50,
-    marginHorizontal: 16,
-    backgroundColor: "#FFF",
-    marginBottom: 18,
-    marginTop: 25,
-    borderRadius: 10,
-    flexDirection: "row",
-    padding: 10,
-    paddingLeft: 20,
+    top: 65,
+    marginBottom: 65
   },
   text1:{
     left:160,
