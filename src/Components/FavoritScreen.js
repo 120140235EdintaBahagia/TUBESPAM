@@ -8,20 +8,28 @@ function FavoritScreen({navigation}){
       <View style={styles.container}>
         <Text style={styles.text}>Resep Favorit Saya</Text>
         <View style={styles.box1}>
-            <Text style={styles.textkotak}>Nasi Goreng</Text>
-            <Image style={styles.picture} source={require('../Images/nasgor.jpeg')}></Image>
+            <TouchableOpacity>
+                <Text style={styles.textkotak}>Nasi Goreng</Text>
+                <Image style={styles.picture} source={require('../Images/nasgor.png')}></Image>
+            </TouchableOpacity>
         </View>
         <View style={styles.box2}>
-            <Text style={styles.textkotak}>Mie Goreng</Text>
-            <Image style={styles.picture} source={require('../Images/Migor.jpeg')}></Image>
+            <TouchableOpacity>
+                <Text style={styles.textkotak}>Mie Goreng</Text>
+                <Image style={styles.picture} source={require('../Images/Migor.png')}></Image>
+            </TouchableOpacity>
         </View>
         <View style={styles.box3}>
-            <Text style={styles.textkotak}>Ayam Bakar</Text>
-            <Image style={styles.picture} source={require('../Images/Abar.jpeg')}></Image>
+            <TouchableOpacity>
+                <Text style={styles.textkotak}>Ayam Bakar</Text>
+                <Image style={styles.picture} source={require('../Images/Abar.png')}></Image>
+            </TouchableOpacity>
         </View>
         <View style={styles.box4}>
-            <Text style={styles.textkotak}>Telur Dadar Crispy</Text>
-            <Image style={styles.picture} source={require('../Images/TelurDdrCr.jpeg')}></Image>
+            <TouchableOpacity>
+                <Text style={styles.textkotak}>Telur Dadar Crispy</Text>
+                <Image style={styles.picture} source={require('../Images/TelurDdrCr.jpeg')}></Image>
+            </TouchableOpacity>
         </View>
       </View>
     );
@@ -46,7 +54,7 @@ const styles = StyleSheet.create({
         right : 160,
     },
     box1:{
-        backgroundColor: "#3ABD8F",
+        backgroundColor: "#187A6E",
         width: 168,
         height: 150,
         borderRadius: 15,
@@ -55,7 +63,7 @@ const styles = StyleSheet.create({
         top: 180 
     },
     box2:{
-        backgroundColor: "#3ABD8F",
+        backgroundColor: "#187A6E",
         width: 168,
         height: 150,
         borderRadius: 15,
@@ -64,7 +72,7 @@ const styles = StyleSheet.create({
         top: 180 
     },
     box3:{
-        backgroundColor: "#3ABD8F",
+        backgroundColor: "#187A6E",
         width: 168,
         height: 150,
         borderRadius: 15,
@@ -73,7 +81,7 @@ const styles = StyleSheet.create({
         top:380
     },
     box4:{
-        backgroundColor: "#3ABD8F",
+        backgroundColor: "#187A6E",
         width: 168,
         height: 150,
         borderRadius: 15,
