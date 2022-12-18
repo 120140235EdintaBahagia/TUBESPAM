@@ -1,15 +1,16 @@
 # Tugas Proyek Akhir Pemrograman Aplikasi Mobile
-### Nama Aplikasi: RESEP MAKANAN
+### Nama Aplikasi: MENUWQQ
 ### Anggota Kelompok:
+  `• Ahmad Nadhif Mu'afa (120140218)`
+  
+  `• Edinta Bahagia (120140235)`
+  
   `• Dwi Ananda Rizky (120140027)`
   
   `• Gracia Sherianta Br Sitepu (120140084)`
 
   `• Duta Rega Rolindo Simorangkir (120140135)`
 
-  `• Ahmad Nadhif Mu'afa (120140218)`
-
-  `• Edinta Bahagia (120140235)`
 
 # Deskripsi Aplikasi
 
