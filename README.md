@@ -14,6 +14,9 @@
 
 # Deskripsi Aplikasi
 
+Aplikasi MENUWQQ adalah aplikasi e-commerce yang dibuat untuk membantu user dalam belajar memasak dengan sejumlah resep makanan yang disediakan. Aplikasi ini menyediakan beberapa pilihan makanan seperti rendang, nasi goreng, mie goreng, ayam bakar dan lainnya. Pilihan makanan yang user pilih berisikan 
+deskripsi dari makanan, bahan yang diperlukan untuk membuat makanan dan cara membuat makanan yang disediakan pada aplikasi tersebut. Aplikasi ini 
+berbasis react native menggunakan bahasa pemrograman javascript serta menggunakan beberapa API expo dalam membangun aplikasi tersebut.
 
 # Instalasi Aplikasi
  1. Instal melalui File Drive
