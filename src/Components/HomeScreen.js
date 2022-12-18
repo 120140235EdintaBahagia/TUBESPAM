@@ -50,6 +50,7 @@ const HomeScreen = () => {
 const styles = StyleSheet.create({
   container:{
     flex: 1,
+    backgroundColor: '#B1E4D4'
   },
   baseText: {
     fontSize: 20,
@@ -73,7 +74,7 @@ const styles = StyleSheet.create({
     top:15
   },
   boxHijau:{
-    backgroundColor: "#3ABD8F",
+    backgroundColor: "#187A6E",
     width: '90%',
     height: 170,
     borderRadius: 15,
@@ -81,7 +82,7 @@ const styles = StyleSheet.create({
     top:40
 },
 boxHijau2:{
-  backgroundColor: "#3ABD8F",
+  backgroundColor: "#187A6E",
   width: '90%',
   height: 170,
   borderRadius: 15,
