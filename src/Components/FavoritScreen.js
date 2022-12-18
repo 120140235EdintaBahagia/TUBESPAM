@@ -8,28 +8,31 @@ function FavoritScreen({navigation}){
       <View style={styles.container}>
         <Text style={styles.text}>Resep Favorit Saya</Text>
         <View style={styles.box1}>
-            <TouchableOpacity>
-                <Text style={styles.textkotak}>Nasi Goreng</Text>
-                <Image style={styles.picture} source={require('../Images/nasgor.png')}></Image>
-            </TouchableOpacity>
+
+        <TouchableOpacity onPress={()=>navigation.navigate('DetailScreen', {name:"Nasi Goreng" , img:"../Images/nasgor.jpeg" , bahan1 : "Nasi Putih 1 Piring" , bahan2 :"Bawang putih 2 siung" , bahan3:"Kecap Manis", bahan4:"Garam secukupnya" , cara1 : "Cuci bersih ayam dan lumuri dengan air jerik nipis dan garam , lalu diamkan selama 15 menit" , cara2:"Panaskan Minyak" , cara3:"Tumis bumbu ungkep ayam bakar, tambahkan daun jeruk dan serai hingga" })} >
+        <Text style={styles.textkotak} >Nasi Goreng</Text>
+          <Image source={require('../Images/nasgor.jpeg')} style={{height:80, width:80, margin:20, top:-20, left:20}} />
+        </TouchableOpacity>
         </View>
         <View style={styles.box2}>
-            <TouchableOpacity>
-                <Text style={styles.textkotak}>Mie Goreng</Text>
-                <Image style={styles.picture} source={require('../Images/Migor.png')}></Image>
-            </TouchableOpacity>
+
+        <TouchableOpacity onPress={()=>navigation.navigate('DetailScreen', {name:"Mie Goreng" , img:"../Images/Migor.jpeg" , bahan1 : "1 bungkus mie telur" , bahan2 :"4 sdm kecap manis" , bahan3:"3 sdm mentega unsalted", bahan4:"25 gram bawang putih cincang" , cara1 : "Siapkan penggorengan dan panaskan mentega" , cara2:"Tumis bawang putih dan bawang bombai hingga harum" , cara3:"Masukkan daging ayam potong, udang, dan telur kocok" })} >
+            <Text style={styles.textkotak} >Mie Goreng</Text>
+          <Image source={require('../Images/Migor.jpeg')} style={{height:80, width:80, margin:20, top:-20, left:20}} />
+        </TouchableOpacity>
+
         </View>
         <View style={styles.box3}>
-            <TouchableOpacity>
-                <Text style={styles.textkotak}>Ayam Bakar</Text>
-                <Image style={styles.picture} source={require('../Images/Abar.png')}></Image>
-            </TouchableOpacity>
+        <TouchableOpacity onPress={()=>navigation.navigate('DetailScreen', {name:" Ayam Bakar " , img:"../Images/Abar.jpeg" , bahan1 : "8 Potong daging ayam" , bahan2 :"2 batang serai, memarkan" , bahan3:"2 sdm bango kecap manis", bahan4:"1 sdt Garam" , cara1 : "Cuci bersih ayam dan lumuri dengan air jerik nipis dan garam , lalu diamkan selama 15 menit" , cara2:"Panaskan Minyak" , cara3:"Tumis bumbu ungkep ayam bakar, tambahkan daun jeruk dan serai hingga" })} >
+        <Text style={styles.textkotak} >Ayam Bakar</Text>
+          <Image source={require('../Images/Abar.jpeg')} style={{height:80, width:80, margin:20, top:-20, left:20 }} />
+        </TouchableOpacity>
         </View>
         <View style={styles.box4}>
-            <TouchableOpacity>
-                <Text style={styles.textkotak}>Telur Dadar Crispy</Text>
-                <Image style={styles.picture} source={require('../Images/TelurDdrCr.jpeg')}></Image>
-            </TouchableOpacity>
+        <TouchableOpacity onPress={()=>navigation.navigate('DetailScreen', {name:" Telur Dadar Crispy " , Image:'../Images/TelurDdrCr.jpeg' , bahan1 : "2  butir telur" , bahan2 :"2 tahu, haluskan" , bahan3:"2 butir bawang merah, iris tipis", bahan4:"2 cabai merah, iris serong" , cara1 : "Campur tahu yang telah dihaluskan dengan telur." , cara2:"Tambahkan irisan bawang merah, cabai merah , daun bawang , garam dan lada. Aduk Rata" , cara3:"Panaskan Minyak Hingga Benar-benar" })} >
+        <Text style={styles.textkotak} >Telor Dadar Crispy</Text>
+            <Image source={require('../Images/TelurDdrCr.jpeg')} style={{height:80, width:80, margin:20, top:-20, left:20 }} />
+          </TouchableOpacity>
         </View>
       </View>
     );
@@ -54,7 +57,7 @@ const styles = StyleSheet.create({
         right : 160,
     },
     box1:{
-        backgroundColor: "#187A6E",
+        backgroundColor: "#3ABD8F",
         width: 168,
         height: 150,
         borderRadius: 15,
@@ -63,7 +66,7 @@ const styles = StyleSheet.create({
         top: 180 
     },
     box2:{
-        backgroundColor: "#187A6E",
+        backgroundColor: "#3ABD8F",
         width: 168,
         height: 150,
         borderRadius: 15,
@@ -72,7 +75,7 @@ const styles = StyleSheet.create({
         top: 180 
     },
     box3:{
-        backgroundColor: "#187A6E",
+        backgroundColor: "#3ABD8F",
         width: 168,
         height: 150,
         borderRadius: 15,
@@ -81,7 +84,7 @@ const styles = StyleSheet.create({
         top:380
     },
     box4:{
-        backgroundColor: "#187A6E",
+        backgroundColor: "#3ABD8F",
         width: 168,
         height: 150,
         borderRadius: 15,
