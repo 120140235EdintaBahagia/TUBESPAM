@@ -70,6 +70,7 @@ export default function HomeScreen({navigation}) {
 const styles = StyleSheet.create({
   container:{
     flex: 1,
+    backgroundColor:'#B1E4D4',
   },
   baseText: {
     fontSize: 20,
@@ -101,7 +102,7 @@ const styles = StyleSheet.create({
     top:40
 },
 boxHijau2:{
-  backgroundColor: "#3ABD8F",
+  backgroundColor: "#187A6E",
   width: '30%',
   height: 170,
   borderRadius: 15,
@@ -109,7 +110,7 @@ boxHijau2:{
   top:-128,
 },
 boxHijau3:{
-  backgroundColor: "#3ABD8F",
+  backgroundColor: "#187A6E",
   width: '30%',
   height: 170,
   borderRadius: 15,
@@ -117,7 +118,7 @@ boxHijau3:{
   top:-298,
 },
 boxHijau4:{
-  backgroundColor: "#3ABD8F",
+  backgroundColor: "#187A6E",
   width: '30%',
   height: 170,
   borderRadius: 15,
@@ -125,7 +126,7 @@ boxHijau4:{
   top:-250,
 },
 boxHijau5:{
-  backgroundColor: "#3ABD8F",
+  backgroundColor: "#187A6E",
   width: '30%',
   height: 170,
   borderRadius: 15,
@@ -133,7 +134,7 @@ boxHijau5:{
   top:-420,
 },
 boxHijau6:{
-  backgroundColor: "#3ABD8F",
+  backgroundColor: "#187A6E",
   width: '30%',
   height: 170,
   borderRadius: 15,
