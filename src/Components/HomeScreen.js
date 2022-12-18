@@ -12,7 +12,6 @@ export default function HomeScreen({navigation}) {
       {"\n"}Mau masak apa hari ini?
       </Text>
       <View style={styles.boxSearch}>
-          <FontAwesome name="search" size={24} color="black" />
           <TextInput
             style={styles.input}
             onChangeText={(text) => {
@@ -22,6 +21,9 @@ export default function HomeScreen({navigation}) {
             value={text}
             placeholder="Cari Resep"
           />
+      </View>
+      <View style={styles.iconSearch}>
+        <FontAwesome name="search" size={35} color="#BDBDBD" />
       </View>
       <View style={styles.boxHijau}>
         <Text style={styles.text1}>Rekomendasi</Text>
@@ -76,25 +78,34 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 'bold',
     left: 20,
+    marginTop: 40
   },
   boxSearch: {
-    width: "auto",
+    width: 300,
     height: 50,
     marginHorizontal: 16,
     backgroundColor: "#FFF",
     marginBottom: 18,
-    marginTop: 25,
-    borderRadius: 10,
+    marginTop: 40,
     flexDirection: "row",
     padding: 10,
     paddingLeft: 20,
+    left: 65
+  },
+  iconSearch:{
+    backgroundColor: "#187A6E",
+    width: 50,
+    height: 50,
+    bottom: 68,
+    left: 30,
+    alignItems: 'center'
   },
   text1:{
     left:20,
     top:15
   },
   boxHijau:{
-    backgroundColor: "#3ABD8F",
+    backgroundColor: "#187A6E",
     width: '30%',
     height: 170,
     borderRadius: 15,
