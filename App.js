@@ -11,6 +11,7 @@ import RegisterScreen from './src/Components/RegisterScreen';
 import ProfilScreen from './src/Components/ProfilScreen'
 import FavoritScreen from './src/Components/FavoritScreen';
 import KotakScreen from './src/Components/KotakScreen';
+import DetailScreen from './src/Components/DetailScreen';
 
 
 const Tab = createBottomTabNavigator();
@@ -34,6 +35,7 @@ export default function App() {
         <Stack.Screen name="SplashScreen" component={SplashScreen} />
         <Stack.Screen name="LoginScreen" component={LoginScreen} />
         <Stack.Screen name="RegisterScreen" component={RegisterScreen}></Stack.Screen>
+        <Stack.Screen name="DetailScreen" component={DetailScreen}></Stack.Screen>
         <Stack.Screen
           name="Bottom"
           component={Bottom}
