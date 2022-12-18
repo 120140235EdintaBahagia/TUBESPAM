@@ -61,8 +61,8 @@ const styles = StyleSheet.create({
         height: 150,
         borderRadius: 15,
         position: "absolute",
-        left: 10,
-        top: 180 
+        left: 20,
+        top: 200 
     },
     box2:{
         backgroundColor: "#187A6E",
@@ -70,8 +70,8 @@ const styles = StyleSheet.create({
         height: 150,
         borderRadius: 15,
         position: "absolute",
-        right: 10,
-        top: 180 
+        right: 20,
+        top: 200 
     },
     box3:{
         backgroundColor: "#187A6E",
@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
         height: 150,
         borderRadius: 15,
         position: "absolute",
-        left: 10,
+        left: 20,
         top:380
     },
     box4:{
@@ -88,7 +88,7 @@ const styles = StyleSheet.create({
         height: 150,
         borderRadius: 15,
         position: "absolute",
-        right: 10,
+        right: 20,
         top:380
     },
     textkotak:{
