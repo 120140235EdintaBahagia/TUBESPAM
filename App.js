@@ -19,7 +19,9 @@ const Stack = createStackNavigator();
 
 function Bottom() {
   return (
-    <Tab.Navigator>
+    <Tab.Navigator screenOptions={{headerShown: false,
+      tabBarInactiveBackgroundColor:'187A6E',
+    }}>
       <Tab.Screen name="Home" component={HomeScreen} />
       <Tab.Screen name="Favorit" component={FavoritScreen}/>
       <Tab.Screen name="Kotak" component={KotakScreen} />
